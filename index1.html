@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Phương Dung</title>
+    
+  <link rel="stylesheet" href="/css/style1.css">
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+.close{
+    display: none;
+}
+.btn.close{
+    display: none;
+}
+.body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("img/love-background.jpg")  center / cover no-repeat;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body.body2{
+    background: url("img/bacgground2.jpg") center/cover no-repeat;
+}
+.text{
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    font-size: 40px;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    margin-top: -300px;
+    margin-left: 80px;
+    
+    
+
+}
+.btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+audio{
+    margin-top: -300px;
+}
+h2{
+    margin-top: -300px;
+    margin-left: -100px;
+}
+button{
+    position: absolute;
+     width: 220px;
+    padding: 28px 24px; 
+    text-transform: capitalize;
+    border-radius: 6px;
+    margin-left: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    
+}
+.btn-1:hover{
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+.img{
+    background: url("img/ảnh-meme-tặng-bông.jpg") center center / cover no-repeat ;
+    width: 500px;
+    height: 502px;
+    margin-top: 90px;
+    display: none;
+}
+.img.open{
+    display: block;
+}
+.img.img1{
+    background: url("img/mèo-buồn.gif") center center / cover no-repeat ;
+    width: 700px;
+    height: 412px;
+    margin-top: 90px;
+}
+.img.img2{
+    background: url("img/Meo-danh-may-AVA.gif") center center / cover no-repeat ;
+    width: 500px;
+    height: 375px;
+    margin-top: 90px;
+}
+.img.img3{
+    background: url("img/cat-happy.gif") center center / cover no-repeat ;
+    width: 488px;
+    height: 352px;
+    margin-top: 90px;
+}
+.img.img4{
+    background: url("img/86b3315f71d8e1177f32d8007aa49ceb.gif") center center / cover no-repeat ;
+    width: 640px;
+    height: 540px;
+    margin-top: 90px;
+}
+.img.img5{
+    background: url("img/200w.gif") center center / cover no-repeat ;
+    width: 600px;
+    height: 492px;
+    margin-top: 90px;
+}
+a{
+    position: absolute;
+    display: none;
+    padding: 15px 20px;
+    color: #9b59b6;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin-left: 830px;
+    margin-top: 100px;
+}
+a.open{
+    display: flex;
+}
+a:hover{
+    color: #ecf0f1;
+    background:#9b59b6 ;
+    box-shadow: 0 0 10px #9b59b6, 0 0 40px #9b59b6, 0 0 80px #9b59b6 ;
+    transition-delay: 0.3s;
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#9b59b6) ;
+
+}
+a:hover span:nth-child(1){
+    left: 100%;
+    transition: 0.3s;
+}
+a span:nth-child(3){
+    bottom:0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#9b59b6) ;
+
+}
+
+a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.15s;
+}
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div class="body">
+        
+        <h1  class="text">
+            helllo có biết tui là ai hông dị
+        </h1>
+        <div class="btn">
+           <button class="btn-1" style="background-image: linear-gradient(to left,#e67e22,#e74c3c);
+           left: 30%;"> anh Nguyn đẹp zai</button>
+           <button class="btn-2" style="background-image: linear-gradient(to left,#e67e22,#e74c3c);
+           right:30%;"> tró đin</button>
+        </div>
+         <div class="img"></div>
+         <a href="./dist/index.html">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          tiếp theo
+      </a>
+       
+    </div>
+  </div>
+  <script>
+    var index=0;
+    function playaudio(audioname){
+            
+            let audio=new Audio(audioname);
+            audio.play();
+            
+        };
+    function random(min,max){
+      return Math.floor(Math.random()*(max-min+1))+min;
+    }
+    const btn= document.querySelector(".btn");
+    const btn1= document.querySelector(".btn-1");
+    const btn2= document.querySelector(".btn-2");
+    const img=document.querySelector(".img");
+    const body=document.querySelector(".body")
+    
+    
+    btn1.addEventListener("click",clickchange)
+    
+    btn2.addEventListener("mouseover",mouseRandom)
+   
+    function clickchange(){
+      if(index==0){
+         btn1.innerHTML="có";
+      btn2.innerHTML="hông"
+      btn2.style.right=460+"px";
+      btn2.style.button=330+"px";
+      document.querySelector("h1").innerHTML="Dị em có iu a hông"
+      playaudio("sound/NgoCham-BigDaddyEmily-10326553.mp3");
+      index=1;
+      } else{
+        btn.classList.add("close")
+        document.querySelector("h1").innerHTML="hì vậy mới ngoan chứ tặng em 1 bó hoa"
+        img.classList.add("open")
+        setTimeout(() => {
+          changeimg();
+        }, 4000);
+        
+      }
+     
+      
+    }
+    function changeimg(){
+      img.classList.add("img1");
+      document.querySelector("h1").innerHTML="anh mún lm bông hoa giấy nhưng đại ca hông khéo tay"
+      setTimeout(() => {
+        changeimg1();
+      }, 4000);
+    }
+    function changeimg1(){
+          img.classList.remove("img1");
+          img.classList.add("img2")
+          document.querySelector("h1").innerHTML="nên anh quyết định làm thứ mik giỏi nhất"
+          setTimeout(() => {
+            changeimg2();
+          }, 4000);
+    }
+    function changeimg2(){
+      img.classList.remove("img2");
+          img.classList.add("img3")
+          document.querySelector("h1").innerHTML="anh quyết định sẽ tự code ra 1 trang wed để tặng em"
+          setTimeout(() => {
+            changeimg3();
+          }, 4000);
+    }
+    function changeimg3(){
+      img.classList.remove("img3");
+          img.classList.add("img4")
+          document.querySelector("h1").innerHTML="nhưng vì 1 số vấn đề về tài chính nên Nguyn hông thể up lên google đc"
+          setTimeout(() => {
+            changeimg4();
+          }, 4000);
+    }
+    function changeimg4(){
+      img.classList.remove("img4");
+          img.classList.add("img5")
+          body.classList.add("body2")
+          document.querySelector("h1").innerHTML="Chúc ebe một mùa noel zui zẻ"
+          document.querySelector("a").classList.add("open")
+    }
+    function mouseRandom(){
+      let i=Math.floor(Math.random()*500)+1;
+      let j=Math.floor(Math.random()*500)+1;
+      btn2.style.left=i+"px";
+      btn2.style.top=j+"px";
+      
+    }
+  </script>
+</body>
+</html>
